@@ -47,7 +47,7 @@ GOOGLE_CREDS_FILE = "service_account.json"
 SPREADSHEET_ID = "1qakkGdVJidgakvy476RUcAp1rkU74TfPOY7sq4TQXzk"
 
 # Configuração segura da API Key
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "****************************************************"
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Configuração de localização
