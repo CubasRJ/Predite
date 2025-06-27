@@ -76,8 +76,8 @@ Integração direta com Google Sheets
 Configuração do Arduino:
 
 bash
-# Instale as bibliotecas necessárias
-# Via PlatformIO:
+Instale as bibliotecas necessárias
+Via PlatformIO:
 pio lib install "OneWire" "DallasTemperature" "EmonLib"
 Configuração do Google Script:
 
