@@ -35,66 +35,81 @@ Envio programado por e-mail
 
 Comparativo com especificações técnicas
 
-🛠️ Tecnologias Utilizadas
-Linguagem: Python 3.9+
+🛠️ Arquitetura do Sistema
+🔌 Componente Arduino (Coleta de Dados)
+O código Arduino é responsável pela coleta dos dados dos sensores e envio para o Google Sheets:
+Arduino.ino
 
-Framework: Streamlit
+Principais características:
 
-APIs: Google Sheets, OpenAI
+Leitura de temperatura via sensor DS18B20
 
-Visualização: Plotly, Matplotlib
+Medição de vibração via sensor SW18010P (contagem de pulsos)
 
-Voz: pyttsx3, SpeechRecognition
+Medição de corrente via sensor SCT-013
 
-PDF: FPDF
+Conexão WiFi segura com credenciais protegidas
+
+Sincronização de horário via NTP
+
+Envio periódico de dados para Google Sheets
+
+Integração com Arduino Cloud para monitoramento remoto
+
+📊 Script Google Apps (Processamento de Dados)
+O script do Google Sheets processa os dados recebidos e os organiza na planilha:
+App Script.gs
+
+Principais características:
+
+Cria abas dinâmicas para cada máquina monitorada
+
+Validação robusta dos dados recebidos
+
+Tratamento de erros detalhado
+
+Formatação automática de datas e valores
+
+Integração direta com Google Sheets
 
 📦 Instalação
-Clone o repositório:
+Configuração do Arduino:
 
 bash
-git [clone https://github.com/CubasRJ/Predite]
-cd Predite
-Instale as dependências:
+# Instale as bibliotecas necessárias
+# Via PlatformIO:
+pio lib install "OneWire" "DallasTemperature" "EmonLib"
+Configuração do Google Script:
+
+Crie um novo projeto no Google Apps Script
+
+Cole o código fornecido
+
+Implante como uma aplicação web
+
+Atualize a URL no código Arduino
+
+Configuração do Dashboard:
 
 bash
+git clone https://github.com/seu-usuario/monitoramento-preditivo.git
+cd monitoramento-preditivo
 pip install -r requirements.txt
-Configure as credenciais:
+streamlit run teste.py
 
-Crie um arquivo service_account.json com suas credenciais do Google Cloud
+📸 Diagrama de Funcionamento:
+![deepseek_mermaid_20250627_ad7904](https://github.com/user-attachments/assets/e47a9347-ae09-4989-befa-e48c39ff0862)
 
-Adicione sua API Key da OpenAI no código
+📌 Casos de Uso
+Manutenção preventiva em fábricas
 
-Execute a aplicação:
+Monitoramento remoto de equipamentos
 
-bash
-streamlit run app.py
-⚙️ Configuração
-Planilha Google Sheets:
+Análise de desempenho de máquinas
 
-Crie uma planilha com abas para cada máquina
+Treinamento de equipes de manutenção
 
-Estruture com colunas: Data/Hora, Temperatura, Vibração (Hz), Corrente (A)
-
-Máquinas:
-
-Configure os nomes e parâmetros na página inicial
-
-Adicione modelos para pesquisa automática de especificações
-
-E-mail:
-
-Insira um e-mail válido para receber relatórios
-
-📝 Como Contribuir
-Faça um fork do projeto
-
-Crie uma branch para sua feature (git checkout -b feature/AmazingFeature)
-
-Commit suas mudanças (git commit -m 'Add some AmazingFeature')
-
-Push para a branch (git push origin feature/AmazingFeature)
-
-Abra um Pull Request
+Auditoria de conformidade industrial
 
 ✉️ Contato
 Seu Nome - dani.cuiabano@gmail.com
