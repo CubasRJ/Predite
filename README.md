@@ -112,6 +112,6 @@ Treinamento de equipes de manutenção
 Auditoria de conformidade industrial
 
 ✉️ Contato
-Seu Nome - dani.cuiabano@gmail.com
+Daniel Cuiabano- dani.cuiabano@gmail.com
 
 Link do Projeto: (https://github.com/CubasRJ/Predite)
